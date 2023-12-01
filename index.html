@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Growtask</title>
     <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
   </head>
   <body>
     <header class="page__header">
@@ -34,9 +38,57 @@
               <div class="image block__image"></div>
             </div>
           </div>
+          <div class="scroll">
+            <h4 class="scroll__text">
+              Покажи сколл <span class="text_active">до формы:</span>
+            </h4>
+            <button
+              class="button button_type_primary text3_bold scroll__button"
+            >
+              К форме
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="about">
+        <div class="container">
+          <h2 class="about__h2">Про вакансию</h2>
+          <p class="about__text text2">
+            Мы ищем аккуратного верстальщика, который хочет учиться и
+            развиваться. С этим мы, конечно же, поможем.
+            <br /><br />
+            Напомним про условия:
+          </p>
+          <div class="condition">
+            <h1 class="condition__h1">20 000</h1>
+            <p class="condition__text text2">
+              Твой оклад на время стажировки (Возможны премии)
+            </p>
+          </div>
+          <div class="condition">
+            <h1 class="condition__h1">5/2</h1>
+            <p class="condition__text text2">Рабочий график</p>
+          </div>
+          <div class="condition">
+            <h1 class="condition__h1">8 ч</h1>
+            <p class="condition__text text2">Рабочий день</p>
+          </div>
+          <div class="swiper photos">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide photo">
+              </div>
+              <div class="swiper-slide photo">
+              </div>
+              <div class="swiper-slide photo">
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </main>
     <footer class="page__footer"></footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>
