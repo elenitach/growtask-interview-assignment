@@ -116,23 +116,120 @@
             <div class="picture"></div>
           </div>
           <div class="pictures__radios">
-          <div class="pictures__radio radio_active">
-            <div class="radio__picture"></div>
-            <div class="text1 radio__text">Картинка 1</div>
+            <div class="pictures__radio radio_active">
+              <div class="radio__picture"></div>
+              <div class="text1 radio__text">Картинка 1</div>
+            </div>
+            <div class="pictures__radio">
+              <div class="radio__picture"></div>
+              <div class="text1 radio__text">Картинка 2</div>
+            </div>
+            <div class="pictures__radio">
+              <div class="radio__picture"></div>
+              <div class="text1 radio__text">Картинка 3</div>
+            </div>
           </div>
-          <div class="pictures__radio">
-            <div class="radio__picture"></div>
-            <div class="text1 radio__text">Картинка 2</div>
+        </div>
+      </div>
+      <div class="faqs">
+        <div class="container">
+          <h2 class="faqs__h2">Ответы на вопросы</h2>
+          <div class="question">
+            <div class="text2_bold question__text">У вас много проектов?</div>
+            <button class="button icon-button button_type_primary">
+              <img src="img/plus-icon.svg" alt="plus" />
+            </button>
           </div>
-          <div class="pictures__radio">
-            <div class="radio__picture"></div>
-            <div class="text1 radio__text">Картинка 3</div>
+          <div class="question">
+            <div class="text2_bold question__text">Есть ли карьерный рост?</div>
+            <button class="button icon-button button_type_primary">
+              <img src="img/plus-icon.svg" alt="plus" />
+            </button>
           </div>
+          <div class="question">
+            <div class="text2_bold question__text">У вас большой штат?</div>
+            <button class="button icon-button button_type_primary">
+              <img src="img/plus-icon.svg" alt="plus" />
+            </button>
+          </div>
+          <div class="question">
+            <div class="text2_bold question__text">
+              Какие цели у вашей студии?
+            </div>
+            <button class="button icon-button button_type_primary">
+              <img src="img/plus-icon.svg" alt="plus" />
+            </button>
           </div>
         </div>
       </div>
     </main>
-    <footer class="page__footer"></footer>
+    <footer class="page__footer">
+      <div class="footer__content">
+        <div class="container">
+          <h2 class="footer__h2">Форма ОС</h2>
+          <p class="footer__text text2">
+            Сверстай форму обратной связи. Будет круто, если заявку будут
+            приходить сюда: a@growtask.ru
+          </p>
+          <form action="" class="form">
+            <input
+              type="text"
+              name="question"
+              id="question"
+              class="form__input text2"
+              placeholder="Напиши вопрос*"
+              required
+            />
+            <input
+              type="text"
+              name="contact"
+              id="contact"
+              class="form__input text2"
+              placeholder="Телефон или почта*"
+              required
+            />
+            <input
+              type="text"
+              name="name"
+              id="name"
+              class="form__input text2"
+              placeholder="Твоё имя*"
+              required
+            />
+            <input
+              type="text"
+              name="social"
+              id="social"
+              class="form__input text2"
+              placeholder="Соц.сеть или мессенджер"
+            />
+            <div class="agreement">
+              <input
+                class="checkbox"
+                type="checkbox"
+                name="agreement"
+                id="agreement"
+              />
+              <label class="agreement__text text3" for="agreement"
+                >Согласие с политикой</label
+              >
+            </div>
+            <button class="button button_type_primary text3_bold form__button">
+              Отправить заявку
+            </button>
+          </form>
+          <h4 class="footer__h4">Не забудь вставить соц.сети</h4>
+          <div class="footer__buttons">
+            <button class="button icon-button button_type_social">
+              <img src="img/vk-icon.svg" alt="vk-icon">
+            </button>
+            <button class="button icon-button button_type_social">
+              <img src="img/tg-icon.svg" alt="telegram-icon">
+            </button>
+          </div>
+        </div>
+      </div>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="script.js"></script>

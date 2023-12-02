@@ -31,9 +31,13 @@
   --button-main-outline-static: #17e5e5;
   --button-main-shadow-hover: #e1fafa;
   --button-main-shadow-press: #daf2f2;
+  --button-social-static: #fff;
+  --button-social-hover: #E1FAFA;
+  --button-social-press: #DAF2F2;
   --button-radiobutton-static: #fff;
   --button-radiobutton-press: #14cccc;
   --input-error: #f66;
+  --input-static: #daf2f2;
   --other-social-vk: #07f;
   --other-social-tg: #27a6e5;
 }
@@ -168,9 +172,23 @@ h4 {
   width: 48px;
 }
 
+.button_type_social {
+  padding: 0;
+  background-color: var(--button-social-static);
+}
+
+.button_type_social:hover {
+  background-color: var(--button-social-hover);
+}
+
+.button_type_social:active {
+  background-color: var(--button-social-press);
+}
+
 .button_type_primary {
   background-color: var(--main-color-1-main);
   color: var(--text-icon-gray-white);
+  font-family: inherit;
 }
 
 .button_type_primary:hover {
@@ -290,17 +308,17 @@ h4 {
 }
 
 .photo:nth-child(1) {
-  background: url('img/office1.png') 0 0 / cover,
+  background: url("img/office1.png") 0 0 / cover,
     lightgray 50% / cover no-repeat;
 }
 
 .photo:nth-child(2) {
-  background: url('img/office2.png') 0 0 / cover,
+  background: url("img/office2.png") 0 0 / cover,
     lightgray 50% / cover no-repeat;
 }
 
 .photo:nth-child(3) {
-  background: url('img/office3.png') 0 0 / cover,
+  background: url("img/office3.png") 0 0 / cover,
     lightgray 50% / cover no-repeat;
 }
 
@@ -335,28 +353,23 @@ h4 {
 }
 
 .slider__item:nth-child(1) {
-  background: url('img/card1.png') 50% / cover,
-    lightgray 50% / cover no-repeat;
+  background: url("img/card1.png") 50% / cover, lightgray 50% / cover no-repeat;
 }
 
 .slider__item:nth-child(2) {
-  background: url('img/card2.png') 50% / cover,
-    lightgray 50% / cover no-repeat;
+  background: url("img/card2.png") 50% / cover, lightgray 50% / cover no-repeat;
 }
 
 .slider__item:nth-child(3) {
-  background: url('img/card3.png') 50% / cover,
-    lightgray 50% / cover no-repeat;
+  background: url("img/card3.png") 50% / cover, lightgray 50% / cover no-repeat;
 }
 
 .slider__item:nth-child(4) {
-  background: url('img/card4.png') 50% / cover,
-    lightgray 50% / cover no-repeat;
+  background: url("img/card4.png") 50% / cover, lightgray 50% / cover no-repeat;
 }
 
 .slider__item:nth-child(5) {
-  background: url('img/card5.png') 50% / cover,
-    lightgray 50% / cover no-repeat;
+  background: url("img/card5.png") 50% / cover, lightgray 50% / cover no-repeat;
 }
 
 .pictures {
@@ -378,18 +391,18 @@ h4 {
 }
 
 .picture:nth-child(1) {
-  background: url('img/picture1.jpg') 50% / cover,
+  background: url("img/picture1.jpg") 50% / cover,
     lightgray 50% / cover no-repeat;
   z-index: 1;
 }
 
 .picture:nth-child(2) {
-  background: url('img/picture2.jpg') 50% / cover,
+  background: url("img/picture2.jpg") 50% / cover,
     lightgray 50% / cover no-repeat;
 }
 
 .picture:nth-child(3) {
-  background: url('img/picture3.jpg') 50% / cover,
+  background: url("img/picture3.jpg") 50% / cover,
     lightgray 50% / cover no-repeat;
 }
 
@@ -417,16 +430,138 @@ h4 {
 }
 
 .pictures__radio:nth-child(1) .radio__picture {
-  background: url('img/picture1.jpg') 50% / cover,
+  background: url("img/picture1.jpg") 50% / cover,
     lightgray 50% / cover no-repeat;
 }
 
 .pictures__radio:nth-child(2) .radio__picture {
-  background: url('img/picture2.jpg') 50% / cover,
+  background: url("img/picture2.jpg") 50% / cover,
     lightgray 50% / cover no-repeat;
 }
 
 .pictures__radio:nth-child(3) .radio__picture {
-  background: url('img/picture3.jpg') 50% / cover,
+  background: url("img/picture3.jpg") 50% / cover,
     lightgray 50% / cover no-repeat;
+}
+
+.faqs {
+  padding: 40px 0 80px;
+}
+
+.faqs__h2 {
+  margin-bottom: 40px;
+}
+
+.question {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  padding: 12px 12px 12px 24px;
+  background-color: var(--main-gray-lighter);
+  border-radius: var(--radius);
+}
+
+.question:last-child {
+  margin-bottom: 0;
+}
+
+.page__footer {
+  padding: 80px 0;
+  background-color: var(--main-gray-black);
+}
+
+.footer__content {
+  padding: 40px 0;
+  background-image: url("img/footer-bg.svg");
+  color: var(--text-icon-gray-white);
+}
+
+.footer__h2 {
+  margin-bottom: 20px;
+}
+
+.footer__text {
+  margin-bottom: 40px;
+}
+
+.form {
+  margin-bottom: 32px;
+  padding: 20px 16px;
+  background-color: var(--main-gray-white);
+  border-radius: var(--radius);
+}
+
+.form__input {
+  display: block;
+  width: 100%;
+  margin-bottom: 12px;
+  padding: 12px 16px;
+  color: var(--text-icon-gray-dark);
+  border-radius: 4px;
+  border: 2px solid var(--input-static);
+}
+
+.form__input:last-child {
+  margin-bottom: 20px;
+}
+
+.form__input::placeholder {
+  color: var(--text-icon-gray-dark);
+}
+
+.agreement {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.agreement__text {
+  color: var(--text-icon-gray-dark);
+}
+
+input[type="checkbox"] {
+  width: 0;
+  height: 24px;
+  margin: 0 24px 0 0;
+}
+
+input[type="checkbox"]::before {
+  content: "";
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  flex-grow: 0;
+  background-image: url("img/checkbox-static.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+input[type="checkbox"]:hover::before {
+  background-image: url("img/checkbox-hover.svg");
+}
+
+input[type="checkbox"]:checked::before {
+  background-image: url("img/checkbox-active-static.svg");
+}
+
+input[type="checkbox"]:checked:hover:before {
+  background-image: url("img/checkbox-active-hover.svg");
+}
+
+.form__button {
+  width: 100%;
+}
+
+.footer__h4 {
+  margin-bottom: 32px;
+}
+
+.footer__buttons {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
 }
