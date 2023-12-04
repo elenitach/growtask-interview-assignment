@@ -14,9 +14,9 @@
     <header>
       <div class="page__header">
         <div class="container header__container">
-          <img src="img/logo.svg" alt="growtask-logo" />
+          <img class="header__logo" src="img/logo.svg" alt="growtask-logo" />
+          <h4 class="header__h4 hidden">Меню</h4>
           <button class="button icon-button button_type_primary button_menu">
-            <!-- <input type="checkbox" class="header__checkbox" /> -->
             <img
               class="header__icon_burger"
               src="img/burger-icon.svg"
@@ -33,12 +33,21 @@
       <nav class="menu">
         <div class="container menu__container">
           <ul class="menu__items">
-            <li><a href="#about" class="menu__item link">Текст и картинки</a></li>
-            <li><a href="#slider" class="menu__item link">Пример слайдера</a></li>
-            <li><a href="#pictures" class="menu__item link">Кнопки и картинки</a></li>
+            <li>
+              <a href="#about" class="menu__item link">Текст и картинки</a>
+            </li>
+            <li>
+              <a href="#slider" class="menu__item link">Пример слайдера</a>
+            </li>
+            <li>
+              <a href="#pictures" class="menu__item link">Кнопки и картинки</a>
+            </li>
             <li><a href="#faqs" class="menu__item link">Вопрос—ответ</a></li>
           </ul>
-          <a href="#form" class="button button_type_primary text3_bold menu__button">
+          <a
+            href="#form"
+            class="button button_type_primary text3_bold menu__button"
+          >
             К форме
           </a>
           <div class="menu__social">
@@ -75,11 +84,12 @@
             <h4 class="scroll__text">
               Покажи сколл <span class="text_active">до формы:</span>
             </h4>
-            <button
+            <a
+              href="#form"
               class="button button_type_primary text3_bold scroll__button"
             >
               К форме
-            </button>
+            </a>
           </div>
         </div>
       </div>
@@ -144,7 +154,7 @@
       <div class="pictures" id="pictures">
         <div class="container">
           <div class="pictures__container">
-            <div class="picture"></div>
+            <div class="picture picture_active"></div>
             <div class="picture"></div>
             <div class="picture"></div>
           </div>
