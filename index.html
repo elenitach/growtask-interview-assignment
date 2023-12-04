@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Growtask</title>
+    <link rel="icon" href="favicon.png" />
     <link rel="stylesheet" href="style.css" />
     <link
       rel="stylesheet"
@@ -177,32 +178,42 @@
       <div class="faqs" id="faqs">
         <div class="container">
           <h2 class="faqs__h2">Ответы на вопросы</h2>
-          <div class="question">
-            <div class="text2_bold question__text">У вас много проектов?</div>
-            <button class="button icon-button button_type_primary">
-              <img src="img/plus-icon.svg" alt="plus" />
-            </button>
-          </div>
-          <div class="question">
-            <div class="text2_bold question__text">Есть ли карьерный рост?</div>
-            <button class="button icon-button button_type_primary">
-              <img src="img/plus-icon.svg" alt="plus" />
-            </button>
-          </div>
-          <div class="question">
-            <div class="text2_bold question__text">У вас большой штат?</div>
-            <button class="button icon-button button_type_primary">
-              <img src="img/plus-icon.svg" alt="plus" />
-            </button>
-          </div>
-          <div class="question">
-            <div class="text2_bold question__text">
-              Какие цели у вашей студии?
-            </div>
-            <button class="button icon-button button_type_primary">
-              <img src="img/plus-icon.svg" alt="plus" />
-            </button>
-          </div>
+          <details class="question">
+            <summary class="question__content">
+              <div class="text2_bold question__text">У вас много проектов?</div>
+              <button class="button icon-button button_type_primary">
+                <img class="button__img" src="img/plus-icon.svg" alt="plus" />
+              </button>
+            </summary>
+            <p class="question__answer text2">Достаточно, чтобы работать и получать удовольствие от работы)</p>
+          </details>
+          <details class="question">
+            <summary class="question__content">
+              <div class="text2_bold question__text">Есть ли карьерный рост?</div>
+              <button class="button icon-button button_type_primary">
+                <img class="button__img" src="img/plus-icon.svg" alt="plus" />
+              </button>
+            </summary>
+            <p class="question__answer text2">Карьерный рост есть, но он зависит только от тебя. Никто специально тянуть не будет.</p>
+          </details>
+          <details class="question">
+            <summary class="question__content">
+              <div class="text2_bold question__text">У вас большой штат?</div>
+              <button class="button icon-button button_type_primary">
+                <img class="button__img" src="img/plus-icon.svg" alt="plus" />
+              </button>
+            </summary>
+            <p class="question__answer text2">Штат небольшой</p>
+          </details>
+          <details class="question">
+            <summary class="question__content">
+              <div class="text2_bold question__text">Какие цели у вашей студии?</div>
+              <button class="button icon-button button_type_primary">
+                <img class="button__img" src="img/plus-icon.svg" alt="plus" />
+              </button>
+            </summary>
+            <p class="question__answer text2">Развивать свои продукты в среднем ценовом сегменте. Занять не занятую нишу отличных сайтов по адекватной цене.</p>
+          </details>
         </div>
       </div>
     </main>
@@ -219,7 +230,7 @@
               type="text"
               name="question"
               id="question"
-              class="form__input text2"
+              class="form__input text2_bold"
               placeholder="Напиши вопрос*"
               required
             />
@@ -227,7 +238,7 @@
               type="text"
               name="contact"
               id="contact"
-              class="form__input text2"
+              class="form__input text2_bold"
               placeholder="Телефон или почта*"
               required
             />
@@ -235,7 +246,7 @@
               type="text"
               name="name"
               id="name"
-              class="form__input text2"
+              class="form__input text2_bold"
               placeholder="Твоё имя*"
               required
             />
@@ -243,7 +254,7 @@
               type="text"
               name="social"
               id="social"
-              class="form__input text2"
+              class="form__input text2_bold"
               placeholder="Соц.сеть или мессенджер"
             />
             <div class="agreement">
