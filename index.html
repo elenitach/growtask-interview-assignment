@@ -64,14 +64,16 @@
     </header>
     <main class="page__main">
       <div class="block">
-        <div class="container">
-          <h1 class="block__h1">
-            Покажи нам чудеса <span class="text_active">своей вёрстки</span>
-          </h1>
-          <p class="block__description text2">
-            Это текстовое задание, которое нужно просто и грамотно сверстать. Мы
-            уверены, что у тебя всё получится.
-          </p>
+        <div class="container block__container">
+          <div class="block__wrapper">
+            <h1 class="block__h1">
+              Покажи нам чудеса <span class="text_active">своей вёрстки</span>
+            </h1>
+            <p class="block__description text2">
+              Это текстовое задание, которое нужно просто и грамотно сверстать.
+              Мы уверены, что у тебя всё получится.
+            </p>
+          </div>
           <div class="block__images">
             <div class="images__column">
               <div class="image block__image"></div>
@@ -95,27 +97,33 @@
         </div>
       </div>
       <div class="about" id="about">
-        <div class="container">
-          <h2 class="about__h2">Про вакансию</h2>
-          <p class="about__text text2">
-            Мы ищем аккуратного верстальщика, который хочет учиться и
-            развиваться. С этим мы, конечно же, поможем.
-            <br /><br />
-            Напомним про условия:
-          </p>
-          <div class="condition">
-            <h1 class="condition__h1">20 000</h1>
-            <p class="condition__text text2">
-              Твой оклад на время стажировки (Возможны премии)
-            </p>
-          </div>
-          <div class="condition">
-            <h1 class="condition__h1">5/2</h1>
-            <p class="condition__text text2">Рабочий график</p>
-          </div>
-          <div class="condition">
-            <h1 class="condition__h1">8 ч</h1>
-            <p class="condition__text text2">Рабочий день</p>
+        <div class="container about__container">
+          <div class="about__row-wrapper">
+            <div class="about__wrapper">
+              <h2 class="about__h2">Про вакансию</h2>
+              <p class="about__text text2">
+                Мы ищем аккуратного верстальщика, который хочет учиться и
+                развиваться. С этим мы, конечно же, поможем.
+                <br /><br />
+                Напомним про условия:
+              </p>
+            </div>
+            <div class="conditions">
+              <div class="condition">
+                <h1 class="condition__h1">20 000</h1>
+                <p class="condition__text text2">
+                  Твой оклад на время стажировки (Возможны премии)
+                </p>
+              </div>
+              <div class="condition">
+                <h1 class="condition__h1">5/2</h1>
+                <p class="condition__text text2">Рабочий график</p>
+              </div>
+              <div class="condition">
+                <h1 class="condition__h1">8 ч</h1>
+                <p class="condition__text text2">Рабочий день</p>
+              </div>
+            </div>
           </div>
           <div class="swiper photos">
             <div class="swiper-wrapper">
@@ -153,8 +161,8 @@
         </div>
       </div>
       <div class="pictures" id="pictures">
-        <div class="container">
-          <div class="pictures__container">
+        <div class="container pictures__container">
+          <div class="pictures__wrapper">
             <div class="picture picture_active"></div>
             <div class="picture"></div>
             <div class="picture"></div>
@@ -185,16 +193,23 @@
                 <img class="button__img" src="img/plus-icon.svg" alt="plus" />
               </button>
             </summary>
-            <p class="question__answer text2">Достаточно, чтобы работать и получать удовольствие от работы)</p>
+            <p class="question__answer text2">
+              Достаточно, чтобы работать и получать удовольствие от работы)
+            </p>
           </details>
           <details class="question">
             <summary class="question__content">
-              <div class="text2_bold question__text">Есть ли карьерный рост?</div>
+              <div class="text2_bold question__text">
+                Есть ли карьерный рост?
+              </div>
               <button class="button icon-button button_type_primary">
                 <img class="button__img" src="img/plus-icon.svg" alt="plus" />
               </button>
             </summary>
-            <p class="question__answer text2">Карьерный рост есть, но он зависит только от тебя. Никто специально тянуть не будет.</p>
+            <p class="question__answer text2">
+              Карьерный рост есть, но он зависит только от тебя. Никто
+              специально тянуть не будет.
+            </p>
           </details>
           <details class="question">
             <summary class="question__content">
@@ -207,12 +222,17 @@
           </details>
           <details class="question">
             <summary class="question__content">
-              <div class="text2_bold question__text">Какие цели у вашей студии?</div>
+              <div class="text2_bold question__text">
+                Какие цели у вашей студии?
+              </div>
               <button class="button icon-button button_type_primary">
                 <img class="button__img" src="img/plus-icon.svg" alt="plus" />
               </button>
             </summary>
-            <p class="question__answer text2">Развивать свои продукты в среднем ценовом сегменте. Занять не занятую нишу отличных сайтов по адекватной цене.</p>
+            <p class="question__answer text2">
+              Развивать свои продукты в среднем ценовом сегменте. Занять не
+              занятую нишу отличных сайтов по адекватной цене.
+            </p>
           </details>
         </div>
       </div>
@@ -226,51 +246,61 @@
             приходить сюда: a@growtask.ru
           </p>
           <form action="" class="form">
-            <input
-              type="text"
-              name="question"
-              id="question"
-              class="form__input text2_bold"
-              placeholder="Напиши вопрос*"
-              required
-            />
-            <input
-              type="text"
-              name="contact"
-              id="contact"
-              class="form__input text2_bold"
-              placeholder="Телефон или почта*"
-              required
-            />
-            <input
-              type="text"
-              name="name"
-              id="name"
-              class="form__input text2_bold"
-              placeholder="Твоё имя*"
-              required
-            />
-            <input
-              type="text"
-              name="social"
-              id="social"
-              class="form__input text2_bold"
-              placeholder="Соц.сеть или мессенджер"
-            />
-            <div class="agreement">
-              <input
-                class="checkbox"
-                type="checkbox"
-                name="agreement"
-                id="agreement"
-              />
-              <label class="agreement__text text3" for="agreement"
-                >Согласие с политикой</label
-              >
+            <div class="form__wrapper">
+              <div class="inputs-group">
+                <input
+                  type="text"
+                  name="question"
+                  id="question"
+                  class="form__input text2_bold"
+                  placeholder="Напиши вопрос*"
+                  required
+                />
+                <input
+                  type="text"
+                  name="contact"
+                  id="contact"
+                  class="form__input text2_bold"
+                  placeholder="Телефон или почта*"
+                  required
+                />
+              </div>
+              <div class="inputs-group">
+                <input
+                  type="text"
+                  name="name"
+                  id="name"
+                  class="form__input text2_bold"
+                  placeholder="Твоё имя*"
+                  required
+                />
+                <input
+                  type="text"
+                  name="social"
+                  id="social"
+                  class="form__input text2_bold"
+                  placeholder="Соц.сеть или мессенджер"
+                />
+              </div>
             </div>
-            <button class="button button_type_primary text3_bold form__button">
-              Отправить заявку
-            </button>
+            <div class="form__buttons-wrapper">
+              <div class="agreement">
+                <input
+                  class="checkbox"
+                  type="checkbox"
+                  name="agreement"
+                  id="agreement"
+                />
+                <label class="agreement__text text3" for="agreement"
+                  >Согласие с политикой</label
+                >
+              </div>
+              <button
+                class="button button_type_primary text3_bold form__button"
+              >
+                Отправить заявку
+              </button>
+            </div>
           </form>
           <h4 class="footer__h4">Не забудь вставить соц.сети</h4>
           <div class="footer__buttons">
