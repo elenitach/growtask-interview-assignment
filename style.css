@@ -169,10 +169,9 @@ h4 {
 }
 
 .container {
-  /* max-width: 1330px; */
+  max-width: 1420px;
   margin: 0 auto;
   padding: 0 16px;
-  /* padding: 0 45px; */
 }
 
 .page__header {
@@ -849,7 +848,7 @@ input[type="checkbox"]:checked:hover:before {
     grid-template-areas:
       "desc img"
       "scroll img";
-    column-gap: 34px;
+    column-gap: 20px;
     padding-bottom: 80px;
   }
 
@@ -879,11 +878,11 @@ input[type="checkbox"]:checked:hover:before {
   }
 
   .about__wrapper {
-    width: 50%;
+    width: 100%;
   }
 
   .conditions {
-    width: 50%;
+    width: 100%;
   }
 
   .pictures__container {
@@ -1191,5 +1190,28 @@ input[type="checkbox"]:checked:hover:before {
   .footer__text {
     max-width: 400px;
     margin-bottom: 60px;
+  }
+}
+
+@media (min-width: 1920px) {
+  .container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .swiper-slide.photo {
+    width: 700px;
+    height: 400px;
+  }
+
+  .swiper-slide.slider__item {
+    width: 340px;
+    height: 480px;
+  }
+
+  .picture {
+    width: 940px;
+    height: 480px;
+    flex-shrink: 0;
   }
 }
