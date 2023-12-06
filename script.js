@@ -1,13 +1,3 @@
-new Swiper(".photos", {
-  slidesPerView: "auto",
-  spaceBetween: 16,
-});
-
-new Swiper(".slider__items", {
-  slidesPerView: "auto",
-  spaceBetween: 16,
-});
-
 const buttonMenu = document.querySelector(".button_menu");
 const headerText = document.querySelector(".header__h4");
 const headerLogo = document.querySelector(".header__logo");
@@ -21,16 +11,26 @@ const faqs = document.querySelectorAll(".question");
 const form = document.querySelector(".form");
 const submitButton = form.querySelector(".form__button");
 
+const initializeSwiper = () => {
+  new Swiper(".photos", {
+    slidesPerView: "auto",
+  });
+
+  new Swiper(".slider__items", {
+    slidesPerView: "auto",
+    navigation: {
+      nextEl: ".slider__button_next",
+      prevEl: ".slider__button_prev",
+    },
+  });
+};
+
 const toggleMenu = () => {
   buttonMenu.classList.toggle("button_menu_open");
   menu.classList.toggle("menu_visible");
   headerLogo.classList.toggle("hidden");
   headerText.classList.toggle("hidden");
 };
-
-[buttonMenu, buttonToForm, ...menuItems, ...buttonsSocial].forEach((elem) => {
-  elem.addEventListener("click", toggleMenu);
-});
 
 const toggleActivePicture = (idx) => {
   picturesRadios.forEach((radio) => radio.classList.remove("radio_active"));
@@ -39,118 +39,140 @@ const toggleActivePicture = (idx) => {
   pictures[idx].classList.add("picture_active");
 };
 
-picturesRadios.forEach((radio, idx) => {
-  radio.addEventListener("click", () => toggleActivePicture(idx));
-});
+const animateFAQs = () => {
+  faqs.forEach((q) => {
+    const summary = q.querySelector("summary");
+    const answer = q.querySelector(".question__answer");
+    const icon = q.querySelector(".button__img");
+    let isClosing = false;
+    let isExpanding = false;
+    let animation = null;
 
-faqs.forEach((q) => {
-  const summary = q.querySelector("summary");
-  const answer = q.querySelector(".question__answer");
-  const icon = q.querySelector(".button__img");
-  let isClosing = false;
-  let isExpanding = false;
-  let animation = null;
-
-  const onAnimationFinish = (open) => {
-    q.open = open;
-    animation = null;
-    isClosing = false;
-    isExpanding = false;
-    q.style.height = "";
-  };
-
-  const expand = () => {
-    isExpanding = true;
-    const startHeight = `${q.offsetHeight}px`;
-    const endHeight = `${summary.offsetHeight + answer.offsetHeight}px`;
-
-    if (animation) {
-      animation.icon.cancel();
-      animation.answer.cancel();
-    }
-    animation = {
-      icon: icon.animate(
-        {
-          transform: ["rotate(0)", "rotate(-45deg)"],
-        },
-        {
-          duration: 300,
-          easing: "ease-out",
-        }
-      ),
-      answer: q.animate(
-        {
-          height: [startHeight, endHeight],
-        },
-        {
-          duration: 300,
-          easing: "ease-out",
-        }
-      ),
+    const onAnimationFinish = (open) => {
+      q.open = open;
+      animation = null;
+      isClosing = false;
+      isExpanding = false;
+      q.style.height = "";
     };
-    animation.answer.onfinish = () => onAnimationFinish(true);
-    animation.answer.oncancel = () => (isExpanding = false);
-  };
 
-  const close = () => {
-    isClosing = true;
-    const startHeight = `${q.offsetHeight}px`;
-    const endHeight = `${summary.offsetHeight}px`;
-    if (animation) {
-      animation.icon.cancel();
-      animation.answer.cancel();
-    }
-    animation = {
-      icon: icon.animate(
-        {
-          transform: ["rotate(-45deg)", "rotate(0)"],
-        },
-        {
-          duration: 300,
-          easing: "ease-out",
-        }
-      ),
-      answer: q.animate(
-        {
-          height: [startHeight, endHeight],
-        },
-        {
-          duration: 300,
-          easing: "ease-out",
-        }
-      ),
+    const expand = () => {
+      isExpanding = true;
+      const startHeight = `${q.offsetHeight}px`;
+      const endHeight = `${summary.offsetHeight + answer.offsetHeight}px`;
+
+      if (animation) {
+        animation.icon.cancel();
+        animation.answer.cancel();
+      }
+      animation = {
+        icon: icon.animate(
+          {
+            transform: ["rotate(0)", "rotate(-45deg)"],
+          },
+          {
+            duration: 300,
+            easing: "ease-out",
+          }
+        ),
+        answer: q.animate(
+          {
+            height: [startHeight, endHeight],
+          },
+          {
+            duration: 300,
+            easing: "ease-out",
+          }
+        ),
+      };
+      animation.answer.onfinish = () => onAnimationFinish(true);
+      animation.answer.oncancel = () => (isExpanding = false);
     };
-    animation.answer.onfinish = () => onAnimationFinish(false);
-    animation.answer.oncancel = () => (isClosing = false);
-  };
 
-  const open = () => {
-    q.style.height = `${q.offsetHeight}px`;
-    q.open = true;
-    window.requestAnimationFrame(expand);
-  };
+    const close = () => {
+      isClosing = true;
+      const startHeight = `${q.offsetHeight}px`;
+      const endHeight = `${summary.offsetHeight}px`;
+      if (animation) {
+        animation.icon.cancel();
+        animation.answer.cancel();
+      }
+      animation = {
+        icon: icon.animate(
+          {
+            transform: ["rotate(-45deg)", "rotate(0)"],
+          },
+          {
+            duration: 300,
+            easing: "ease-out",
+          }
+        ),
+        answer: q.animate(
+          {
+            height: [startHeight, endHeight],
+          },
+          {
+            duration: 300,
+            easing: "ease-out",
+          }
+        ),
+      };
+      animation.answer.onfinish = () => onAnimationFinish(false);
+      animation.answer.oncancel = () => (isClosing = false);
+    };
 
-  summary.addEventListener("click", (e) => {
+    const open = () => {
+      q.style.height = `${q.offsetHeight}px`;
+      q.open = true;
+      window.requestAnimationFrame(expand);
+    };
+
+    summary.addEventListener("click", (e) => {
+      e.preventDefault();
+      if (isClosing || !q.open) {
+        open();
+      } else if (isExpanding || q.open) {
+        close();
+      }
+    });
+  });
+};
+
+const handleFormSubmit = () => {
+  form.addEventListener("submit", async (e) => {
     e.preventDefault();
-    if (isClosing || !q.open) {
-      open();
-    } else if (isExpanding || q.open) {
-      close();
-    }
+    const data = new FormData(form);
+    const response = await fetch("", {
+      method: "POST",
+      body: data,
+    });
+    const result = await response.json();
+    console.log(result);
   });
-});
 
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
-  console.log(e);
-});
-
-submitButton.addEventListener("click", () => {
-  const invalidInputs = form.querySelectorAll(".form__input:invalid");
-  invalidInputs.forEach((input) => {
-    input.classList.add("input_invalid");
-    input.addEventListener("input", (e) =>
-      e.target.classList.remove("input_invalid")
-    );
+  submitButton.addEventListener("click", () => {
+    const invalidInputs = form.querySelectorAll(".form__input:invalid");
+    invalidInputs.forEach((input) => {
+      input.classList.add("input_invalid");
+      input.addEventListener("input", (e) =>
+        e.target.classList.remove("input_invalid")
+      );
+    });
   });
-});
+};
+
+const main = () => {
+  [buttonMenu, buttonToForm, ...menuItems, ...buttonsSocial].forEach((elem) => {
+    elem.addEventListener("click", toggleMenu);
+  });
+
+  picturesRadios.forEach((radio, idx) => {
+    radio.addEventListener("click", () => toggleActivePicture(idx));
+  });
+
+  initializeSwiper();
+  animateFAQs();
+  handleFormSubmit();
+};
+
+main();
